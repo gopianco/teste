@@ -1,34 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Sistema</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="
-  sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+{% extends 'compras/base.html' %}
 
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-    <ul class="navbar-nav">
+{% block content %}
 
-        <li class="nav-item active">          
-        <a class="nav-link" href="#"><i class="fas fa-home"></i>   Home</a>     
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-        </li>
-    </ul>
-</nav>
+<h3 class = "titulo">Lista de compras</h3>
+<div class="table-responsive">
+ 
+  <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Data de compra</th>
+          <th scope="col">Rastreio</th>
+          <th scope="col">Tipo de Frete</th>
+          <th scope="col">Tempo de envio</th>
+          <th scope="col">R$ Total</th>
+          <th scope="col">Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for purchase in purchases %}
+          <tr>
+            <th scope="row">{{purchase.purchase_id}}</th>
+            <td>{{purchase.purchase_date}}</td>
+            <td>{{purchase.tracking_code}}</td>
+            <td>{{purchase.tracking_mode}}</td>
+            <td>{{purchase.shippng_time}}</td>
+            <td>{{purchase.purchase_amount}}</td>
+            <td>Ação</td>
+        {% endfor %}
+        </tr>
+      </tbody>
+    </table>
 
-<div class="container-fluid">
-  <h3>Vertical Navbar Example</h3>
-  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
 </div>
 
-</body>
-</html>
+{% endblock %}
