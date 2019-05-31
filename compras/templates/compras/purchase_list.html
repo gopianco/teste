@@ -9,6 +9,7 @@
       <thead>
         <tr>
           <th scope="col">ID</th>
+          <th scope="col">Descrição</th>
           <th scope="col">Data de compra</th>
           <th scope="col">Rastreio</th>
           <th scope="col">Tipo de Frete</th>
@@ -21,6 +22,7 @@
         {% for purchase in purchases %}
           <tr>
             <th scope="row">{{purchase.purchase_id}}</th>
+            <td>{{purchase}}</td>
             <td>{{purchase.purchase_date}}</td>
             <td>{{purchase.tracking_code}}</td>
             <td>{{purchase.tracking_mode}}</td>
