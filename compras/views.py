@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Purchase
+from .models import Compra
 
-def purchase_list(request):
-    purchases = Purchase.objects.filter(purchase_date__lte=timezone.now()).order_by('-purchase_date')
-    return render(request, 'compras/purchase_list.html', {'purchases': purchases})
+def lista_compras(request):
+    compras = Compra.objects.filter(data_compra__lte=timezone.now()).order_by('-data_compra')
+    return render(request, 'compras/lista_compras.html', {'compras': compras})

@@ -19,15 +19,15 @@
         </tr>
       </thead>
       <tbody>
-        {% for purchase in purchases %}
+        {% for compra in compras %}
           <tr>
-            <th scope="row">{{purchase.purchase_id}}</th>
-            <td>{{purchase}}</td>
-            <td>{{purchase.purchase_date}}</td>
-            <td>{{purchase.tracking_code}}</td>
-            <td>{{purchase.tracking_mode}}</td>
-            <td>{{purchase.shippng_time}}</td>
-            <td>{{purchase.purchase_amount}}</td>
+            <th scope="row">{{compra.id_compra}}</th>
+            <td>{{compra}}</td>
+            <td>{{compra.data_compra}}</td>
+            <td>{{compra.codigo_rastreio}}</td>
+            <td>{{compra.codigo_rastreio}}</td>
+            <td>{{compra.tempo_envio}}</td>
+            <td>{{compra.total_compra}}</td>
             <td>Ação</td>
         {% endfor %}
         </tr>
