@@ -7,6 +7,7 @@ metodo_envio = (
     ('0215', 'SEDEX10'),
 )
 
+
 class Compra(models.Model):
     id_compra = models.AutoField(primary_key=True)
     data_compra = models.DateTimeField(default=timezone.now)
@@ -22,6 +23,7 @@ class Compra(models.Model):
 
     def __str__(self):
        return 'Compra nº ' + str(self.id_compra)
+
 
 class Produto(models.Model):
     descricao = models.CharField(max_length=200)

@@ -22,7 +22,7 @@
         {% for compra in compras %}
           <tr>
             <th scope="row">{{compra.id_compra}}</th>
-            <td>{{compra}}</td>
+            <td><a href="{% url 'compra_detalhes' pk=compra.pk %}">{{compra}}</a></td>
             <td>{{compra.data_compra}}</td>
             <td>{{compra.codigo_rastreio}}</td>
             <td>{{compra.codigo_rastreio}}</td>
