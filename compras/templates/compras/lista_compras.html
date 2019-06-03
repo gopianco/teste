@@ -5,6 +5,7 @@
 
 
 <h3 class = "titulo">Lista de compras</h3>
+<a href="{% url 'nova_compra' %}" class="btn superior"><span class="fa fa-plus-circle"></span></a>
 <div class="table-responsive">
  
   <table class="table table-hover">
@@ -30,7 +31,9 @@
             <td>{{compra.codigo_rastreio}}</td>
             <td>{{compra.tempo_envio}}</td>
             <td>{{compra.total_compra}}</td>
-            <td>Ação</td>
+            <td><a class="btn btn-default" href="{% url 'compra_detalhes' pk=compra.pk %}"><span class="fa fa-bars"></span></a>
+              <a class="btn btn-default" href="{% url 'editar_compra' pk=compra.pk %}"><span class="fa fa-edit"></span></a>
+            </td>
         {% endfor %}
         </tr>
       </tbody>

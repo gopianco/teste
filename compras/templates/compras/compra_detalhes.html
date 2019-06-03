@@ -32,7 +32,7 @@
             <td>Quantidade</td>
             <td>{{produto.custo}}</td>
             <td>{{produto.status}}</td>
-            <td><a class="btn btn-default" href="{% url 'editar_compra' pk=compra.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td><a class="btn btn-default" href="{% url 'editar_compra' pk=compra.pk %}"><span class="fa fa-edit"></span></a></td>
         {% endfor %}
         </tr>
       </tbody>
