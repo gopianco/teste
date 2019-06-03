@@ -33,3 +33,24 @@ def nova_compra(request):
         form = ComprarForm()
     return render(request, 'compras/editar_compra.html', {'form': form})
 
+
+def editar_compra(request, pk):
+    compra = get_object_or_404(Compra, pk=pk)
+    if request.method == 'POST':
+        form = ComprarForm(request.POST, instance=compra)
+        if form.is_valid():
+            compra = form.save()
+            
+            tot = 0.0
+
+            i = Compra.objects.get(id_compra = compra.pk).produtos.values('custo')
+            for i in i:
+                tot += float(i['custo'])
+            
+            compra.total_compra = tot
+            compra.save()
+            return redirect('compra_detalhes', pk=compra.pk)
+    else:
+        form = ComprarForm(instance=compra)
+
+    return render(request, 'compras/editar_compra.html', {'form': form})

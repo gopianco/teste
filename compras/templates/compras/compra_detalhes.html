@@ -19,7 +19,8 @@
           <th scope="col">Status</th>
           <th scope="col">Ação</th>
         </tr>
-      </thead>     <tbody>
+      </thead>     
+      <tbody>
         {% for produto in produtos %}
           <tr>
             <th scope="row">{{produto.id_produto}}</th>
@@ -31,7 +32,7 @@
             <td>Quantidade</td>
             <td>{{produto.custo}}</td>
             <td>{{produto.status}}</td>
-            <td>Ação</td>
+            <td><a class="btn btn-default" href="{% url 'editar_compra' pk=compra.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
         {% endfor %}
         </tr>
       </tbody>
