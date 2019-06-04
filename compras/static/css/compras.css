@@ -7,8 +7,14 @@
     padding: 1%;
 }
 
-.btn superior{
-    margin-left: 50%;
-    padding: 5%;
+span#plus{
+    float:right;
+    padding: 1%;
     
+}
+
+p#adicionar{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    float:right;
+    padding: 2%;
 }

@@ -5,7 +5,8 @@
 
 
 <h3 class = "titulo">Lista de compras</h3>
-<a href="{% url 'nova_compra' %}" class="btn superior"><span class="fa fa-plus-circle"></span></a>
+<a href="{% url 'nova_compra' %}"><span  id="plus" class="fa fa-plus-circle"><p id="adicionar">Adicionar</p></span></a>
+
 <div class="table-responsive">
  
   <table class="table table-hover">
@@ -33,6 +34,8 @@
             <td>{{compra.total_compra}}</td>
             <td><a class="btn btn-default" href="{% url 'compra_detalhes' pk=compra.pk %}"><span class="fa fa-bars"></span></a>
               <a class="btn btn-default" href="{% url 'editar_compra' pk=compra.pk %}"><span class="fa fa-edit"></span></a>
+              <a class="btn btn-default" href="#"><span class="fa fa-times-circle"></span></a>
+              <a class="btn btn-default" href="#"><span class="fa fa-cube"></span></a>
             </td>
         {% endfor %}
         </tr>
