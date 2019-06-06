@@ -54,3 +54,10 @@ def editar_compra(request, pk):
         form = ComprarForm(instance=compra)
 
     return render(request, 'compras/editar_compra.html', {'form': form})
+
+def remover_compra(request, pk):
+    compra = get_object_or_404(Compra, pk=pk)
+    delete = Compra.objects.filter(id_compra = compra.pk).delete()
+
+    return redirect('/')
+
