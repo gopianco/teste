@@ -29,10 +29,10 @@
             <td><a href="{% url 'compra_detalhes' pk=compra.pk %}">{{compra}}</a></td>
             <td>{{compra.data_compra}}</td>
             <td>{{compra.codigo_rastreio}}</td>
-            <td>{{compra.codigo_rastreio}}</td>
+            <td>{{compra.metodo_envio}}</td>
             <td>{{compra.tempo_envio}}</td>
-            <td>{{compra.total_compra}}</td>
-            <td><a class="btn btn-default" href="{% url 'compra_detalhes' pk=compra.pk %}"><span class="fa fa-bars"></span></a>
+            <td>{{compra.total_produtos}}</td>
+            <td><a class="btn btn-default" href="{% url 'compra_detalhes' pk=compra.pk %}"><span class="fa fa-eye"></span></a>
               <a class="btn btn-default" href="{% url 'editar_compra' pk=compra.pk %}"><span class="fa fa-edit"></span></a>
               <a class="btn btn-default" href="{% url 'remover_compra' pk=compra.pk %}" onclick="return confirm('Tem certeza que quer remover?')"><span class="fa fa-times-circle"></span></a>
               <a class="btn btn-default" href="#"><span class="fa fa-cube"></span></a>

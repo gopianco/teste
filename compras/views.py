@@ -22,11 +22,11 @@ def nova_compra(request):
             
             tot = 0.0
 
-            i = Compra.objects.get(id_compra = compra.pk).produtos.values('custo')
+            i = Compra.objects.get(id_compra=compra.pk).produtos.values('custo')
             for i in i:
                 tot += float(i['custo'])
             
-            compra.total_compra = tot
+            compra.total_produtos = tot
             compra.save()
             return redirect('compra_detalhes', pk=compra.pk)
     else:
@@ -47,7 +47,7 @@ def editar_compra(request, pk):
             for i in i:
                 tot += float(i['custo'])
             
-            compra.total_compra = tot
+            compra.total_produtos = tot
             compra.save()
             return redirect('compra_detalhes', pk=compra.pk)
     else:
