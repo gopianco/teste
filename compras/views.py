@@ -1,9 +1,35 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Compra
 from .forms import ComprarForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
-def lista_compras(request):   
+from .models import Compra
+
+
+def login_user(request):
+    return render(request, 'compras/login.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('/')
+
+def submit_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/')
+        else:
+            messages.error(request, 'Usuário ou senha inválidos')
+
+    return redirect('/')
+
+@login_required(login_url='/login')
+def lista_compras(request):
     compras = Compra.objects.filter(data_compra__lte=timezone.now()).order_by('-data_compra')
     
     return render(request, 'compras/lista_compras.html', {'compras': compras})
@@ -14,6 +40,7 @@ def compra_detalhes(request, pk):
     outro = prod.produtos.all()
     return render(request, 'compras/compra_detalhes.html', {'compra': compra, 'produtos': outro})
 
+@login_required(login_url='/login')
 def nova_compra(request):
     if request.method == 'POST':
         form = ComprarForm(request.POST)
@@ -33,7 +60,7 @@ def nova_compra(request):
         form = ComprarForm()
     return render(request, 'compras/editar_compra.html', {'form': form})
 
-
+@login_required(login_url='/login')
 def editar_compra(request, pk):
     compra = get_object_or_404(Compra, pk=pk)
     if request.method == 'POST':
@@ -55,6 +82,7 @@ def editar_compra(request, pk):
 
     return render(request, 'compras/editar_compra.html', {'form': form})
 
+@login_required(login_url='/login')
 def remover_compra(request, pk):
     compra = get_object_or_404(Compra, pk=pk)
     delete = Compra.objects.filter(id_compra = compra.pk).delete()
