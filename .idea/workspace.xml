@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="772d13e1-b6f1-4ed4-b98b-a4ffa8e354f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/compras/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compras/templates/compras/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/compras/templates/compras/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerenciador/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,10 +70,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/compras/Procfile">
+        <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="21" selection-start-column="21" selection-end-column="21" />
+              <caret column="24" selection-start-column="24" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -120,10 +118,11 @@
         <option value="$PROJECT_DIR$/compras/templates/compras/login.html" />
         <option value="$PROJECT_DIR$/gerenciador/settings.py" />
         <option value="$PROJECT_DIR$/compras/Procfile" />
+        <option value="$PROJECT_DIR$/Procfile" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -157,6 +156,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gopia\PycharmProjects\sistema" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -488,10 +492,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compras/Procfile">
+    <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
